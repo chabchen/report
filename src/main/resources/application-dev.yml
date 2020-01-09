@@ -1,0 +1,31 @@
+server:
+    port: 8088
+spring:
+   slowQueryThreshold: 5000 #5秒
+   datasource:
+       primary:
+           url: jdbc:oracle:thin:@//***.***.***.***:***/***
+           username: ***
+           password: ***
+           driver-class-name: oracle.jdbc.OracleDriver
+           max-idle: 50
+           min-idle: 20
+           max-active: 50
+           max-wait: 10000
+           initial-size: 5
+
+redis:
+    type: jedis
+    indexdb: 10
+    hostName: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 30000
+    maxIdle: 300
+    maxTotal: 10000
+    maxWaitMillis: -1
+    minEvictableIdleTimeMillis: 30000
+    numTestsPerEvictionRun: 1024
+    timeBetweenEvictionRunsMillis: 30000
+    testOnBorrow: true
+    testWhileIdle: true
